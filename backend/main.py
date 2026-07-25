@@ -6,6 +6,7 @@ Upload DICOM/NIFTI → Segment → Download result
 from fastapi import FastAPI, File, UploadFile, HTTPException, Query
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 import torch
 import numpy as np
 from pathlib import Path
@@ -161,6 +162,12 @@ async def segment(
 @app.get("/health")
 def health():
     return {"status": "ok", "device": str(device)}
+
+
+# Serve frontend static files
+frontend_path = Path(__file__).parent.parent / "frontend"
+if frontend_path.exists():
+    app.mount("/", StaticFiles(directory=frontend_path, html=True), name="frontend")
 
 
 if __name__ == "__main__":
