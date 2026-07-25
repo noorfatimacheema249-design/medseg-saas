@@ -1,0 +1,21 @@
+name: Deploy to Hugging Face Spaces
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Push to Hugging Face Spaces
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          git config --global user.email "deploy@medseg.app"
+          git config --global user.name "Deploy Bot"
+          
+          git remote add hf https://oauth2:$HF_TOKEN@huggingface.co/spaces/${{ secrets.HF_USERNAME }}/medseg-saas
+          git push -f hf main

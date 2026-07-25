@@ -1,0 +1,98 @@
+═══════════════════════════════════════════════════════════════════════════
+DEPLOY IN 3 STEPS (10 MINUTES)
+═══════════════════════════════════════════════════════════════════════════
+
+YOUR ULTIMATE GOAL: Get a working URL to share
+
+CHOICE A: FREE & EASIEST (Hugging Face)
+────────────────────────────────────────
+
+STEP 1: Create GitHub repo
+   1a. Go to github.com/new
+   1b. Name it: medseg-saas
+   1c. Create repo (take 30 seconds)
+   1d. Run in your folder:
+       git init
+       git add .
+       git commit -m "init"
+       git remote add origin https://github.com/YOUR_USERNAME/medseg-saas.git
+       git push -u origin main
+
+STEP 2: Create HF Space
+   2a. Go to huggingface.co/spaces/new
+   2b. Name: medseg-saas
+   2c. Runtime: Docker (select this!)
+   2d. Click "Create Space"
+   2e. HF auto-builds from your GitHub repo (takes 5-10 min)
+
+STEP 3: Get your URL
+   3a. In HF Space, you'll see URL like:
+       https://yourname-medseg-saas.hf.space
+   3b. Test it works by visiting that URL
+   3c. DONE. Share this URL everywhere.
+
+TOTAL TIME: 10 minutes
+COST: FREE
+
+
+CHOICE B: PRODUCTION (AWS)
+──────────────────────────
+
+STEP 1: Launch instance
+   1a. Go to console.aws.amazon.com
+   1b. EC2 → Launch Instances
+   1c. Pick: Ubuntu 22.04 LTS
+   1d. Instance type: g4dn.xlarge
+   1e. Launch (takes 2 min to start)
+
+STEP 2: Deploy app
+   2a. SSH into instance
+   2b. Paste these commands:
+       
+       curl -fsSL https://get.docker.com -o get-docker.sh
+       sudo sh get-docker.sh
+       git clone https://github.com/YOUR_USERNAME/medseg-saas.git
+       cd medseg-saas
+       docker build -f docker/Dockerfile -t medseg .
+       docker run -d -p 8000:8000 --gpus all medseg
+
+STEP 3: Get your URL
+   3a. Your URL is: http://INSTANCE_IP:8000
+   3b. Copy instance public IP from AWS console
+   3c. DONE. Share this URL everywhere.
+
+TOTAL TIME: 30 minutes
+COST: $500/month (g4dn.xlarge)
+
+
+WHAT YOU DO RIGHT NOW:
+─────────────────────
+
+Pick ONE:
+
+[A] FREE & EASIEST:
+   → bash DEPLOY_NOW.sh
+   (walks you through HF deployment)
+
+[B] PRODUCTION:
+   → bash QUICK_DEPLOY_AWS.sh
+   (automates AWS setup)
+
+
+AFTER DEPLOYMENT:
+─────────────────
+
+1. Open landing.html
+2. Change this line:
+   <a href="https://your-domain-here.hf.space"
+   
+   To your actual URL:
+   <a href="https://yourname-medseg-saas.hf.space"
+
+3. Test the URL works
+4. Share it on Reddit
+5. Email 10 hospitals
+
+
+YOUR LIVE APP: [URL YOU GET ABOVE]
+═══════════════════════════════════════════════════════════════════════════

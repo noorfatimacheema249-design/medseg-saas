@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedImaging Segmentation - AI-Powered Medical Image Analysis</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+        
+        header h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+        header p { font-size: 1.3rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+        
+        .container { max-width: 1000px; margin: 0 auto; padding: 2rem 1rem; }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .feature {
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .feature h3 { font-size: 1.3rem; margin-bottom: 0.5rem; color: #667eea; }
+        .feature p { color: #666; }
+        
+        .pricing {
+            background: #f8f9fa;
+            padding: 3rem 1rem;
+            margin: 3rem 0;
+            border-radius: 8px;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .plan {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+            text-align: center;
+        }
+        
+        .plan.featured {
+            border-color: #667eea;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+        
+        .plan h4 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .plan .price { font-size: 2.5rem; color: #667eea; font-weight: bold; margin: 1rem 0; }
+        .plan ul { list-style: none; margin: 1.5rem 0; text-align: left; }
+        .plan li { padding: 0.5rem 0; }
+        .plan li:before { content: "✓ "; color: #4caf50; font-weight: bold; margin-right: 0.5rem; }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: transform 0.3s;
+        }
+        
+        .cta-button:hover { transform: translateY(-2px); }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            header p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MedImaging Segmentation</h1>
+        <p>Fast, accurate medical image segmentation powered by AI. No installation required.</p>
+        <a href="https://your-domain-here.hf.space" class="cta-button" style="margin-top: 2rem;">Start Segmenting</a>
+    </header>
+
+    <div class="container">
+        <h2 style="text-align: center; margin: 2rem 0;">Why MedImaging?</h2>
+        
+        <div class="features">
+            <div class="feature">
+                <h3>⚡ Lightning Fast</h3>
+                <p>Process DICOM/NIFTI files in seconds, not minutes</p>
+            </div>
+            <div class="feature">
+                <h3>🧠 AI-Powered</h3>
+                <p>State-of-the-art deep learning models trained on thousands of images</p>
+            </div>
+            <div class="feature">
+                <h3>🔒 Secure</h3>
+                <p>Your images stay with you. No data collection or logging.</p>
+            </div>
+            <div class="feature">
+                <h3>💻 Web-Based</h3>
+                <p>Works in any modern browser. No installation needed.</p>
+            </div>
+            <div class="feature">
+                <h3>📊 Export Ready</h3>
+                <p>Download segmentations in standard NIFTI format</p>
+            </div>
+            <div class="feature">
+                <h3>💰 Affordable</h3>
+                <p>Free tier available. Scale as you grow.</p>
+            </div>
+        </div>
+
+        <div class="pricing">
+            <h2 style="text-align: center;">Simple, Transparent Pricing</h2>
+            <div class="pricing-grid">
+                <div class="plan">
+                    <h4>Free</h4>
+                    <div class="price">$0</div>
+                    <p>/month</p>
+                    <ul>
+                        <li>5 segmentations/month</li>
+                        <li>Basic models</li>
+                        <li>Community support</li>
+                    </ul>
+                    <a href="#" class="cta-button">Get Started</a>
+                </div>
+                <div class="plan featured">
+                    <h4>Pro</h4>
+                    <div class="price">$99</div>
+                    <p>/month</p>
+                    <ul>
+                        <li>Unlimited segmentations</li>
+                        <li>All models</li>
+                        <li>Priority support</li>
+                        <li>Batch processing</li>
+                    </ul>
+                    <a href="#" class="cta-button">Start Free Trial</a>
+                </div>
+                <div class="plan">
+                    <h4>Enterprise</h4>
+                    <div class="price">Custom</div>
+                    <p>/month</p>
+                    <ul>
+                        <li>1000+ segmentations/month</li>
+                        <li>Custom models</li>
+                        <li>Dedicated support</li>
+                        <li>On-premise option</li>
+                    </ul>
+                    <a href="mailto:sales@medseg.app" class="cta-button">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="text-align: center; margin: 2rem 0;">Available Models</h2>
+        <div class="features">
+            <div class="feature">
+                <h3>🫀 Liver</h3>
+                <p>CT liver segmentation with 95%+ accuracy for surgical planning and transplant assessment</p>
+            </div>
+            <div class="feature">
+                <h3>🫁 Lung</h3>
+                <p>CT lung segmentation for nodule detection and lung disease assessment</p>
+            </div>
+            <div class="feature">
+                <h3>💜 Spleen</h3>
+                <p>CT spleen segmentation for trauma assessment and surgical planning</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 MedImaging Segmentation. Built for radiologists. By medical professionals.</p>
+        <p style="margin-top: 1rem; opacity: 0.8;">Not a medical device. Always consult radiologists for clinical decisions.</p>
+    </footer>
+</body>
+</html>
